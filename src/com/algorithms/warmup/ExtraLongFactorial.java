@@ -1,4 +1,4 @@
-package com.practice.warmup;
+package com.algorithms.warmup;
 
 import java.math.BigInteger;
 import java.util.Scanner;
