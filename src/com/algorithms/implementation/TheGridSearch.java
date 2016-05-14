@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 /**
  * Link - https://www.hackerrank.com/challenges/the-grid-search
- * 
  * @author Kuldeep
  * 
  */
