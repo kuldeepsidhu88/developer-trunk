@@ -1,7 +1,5 @@
 package com.algorithms.implementation;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -25,19 +23,25 @@ public class ACMICPCTeam {
 		int number = 0;
 		for (int i = 0; i < noOfStudents; i++) {
 			for (int k = i+1; k < noOfStudents; k++) {
-				char[] stuOne = topics[i].toCharArray();
-				char[] stuTwo = topics[k].toCharArray();
+				//char[] stuOne = topics[i].toCharArray(); int[] a
+				//char[] stuTwo = topics[k].toCharArray(); int[] b
 				char[] result = new char[noOfTopics];
+				
 				for (int j = 0; j < noOfTopics; j++) {
-					if (stuOne[j] == '1' || stuTwo[j] == '1') {
+					/*if (stuOne[j] == '1' || stuTwo[j] == '1') {
+						result[j] = '1';
+					} else {
+						result[j] = '0';
+					}
+					*/
+					
+					if (topics[i].charAt(j) == '1' || topics[k].charAt(j) == '1') { // a[i]|b[i]
 						result[j] = '1';
 					} else {
 						result[j] = '0';
 					}
 				}
-				//System.out.print("[" + i + "," + k + "]");
 
-				//System.out.println(result);
 				String res = String.valueOf(result);
 				
 				int noOfOccurences = res.length() - res.replace("1", "").length();
