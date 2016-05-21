@@ -14,18 +14,40 @@ public class ModifiedKaprekarNumbers {
 		Scanner in = new Scanner(System.in);
 		int min = in.nextInt();
 		int max = in.nextInt();
-		for (int num = min; num < max; num++) {
+		StringBuilder sb = new StringBuilder();
+		for (int num = min; num <= max; num++) {
 			// int num = 45;
 			int numLength = String.valueOf(num).length();
 
-			long square = num * num;
+			long square = (long)Math.pow(num, 2.0);
 			int squareLength = String.valueOf(square).length();
-			long lastDigits = Integer.parseInt(String.valueOf(square).substring(squareLength - numLength));
-			long firstDigits = Integer.parseInt(String.valueOf(square).substring(0, numLength));
+			long firstDigits = 0;
+			long lastDigits = 0;
+			
+			if(num==1 || num==9){
+				sb.append(num+" ");
+				continue;
+			}
+			
+			try {
+				if (squareLength >= numLength) {
+					lastDigits = Integer.parseInt(String.valueOf(square).substring(squareLength - numLength));
+					firstDigits = Integer.parseInt(String.valueOf(square).substring(0, squareLength - numLength));
+				}
+					
+			} catch (Exception ex) {
+				//System.out.println("Error in number : " + num);
+			}
 			long sum = lastDigits + firstDigits;
 			if (sum == num) {
-				System.out.print(num+" ");
+				sb.append(num + " ");
 			}
+
+		}
+		if (sb.length() == 0) {
+			System.out.println("INVALID RANGE");
+		} else {
+			System.out.println(sb);
 		}
 		in.close();
 	}
