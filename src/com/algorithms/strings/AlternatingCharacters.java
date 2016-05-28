@@ -16,7 +16,7 @@ public class AlternatingCharacters {
 		for (int i = 0; i < t; i++) {
 			String s = in.next();
 			int deletions = 0;
-			
+
 			char[] letters = s.toCharArray();
 			char temp = letters[0];
 			for (int j = 1; j < letters.length; j++) {
