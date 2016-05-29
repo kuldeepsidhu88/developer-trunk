@@ -3,7 +3,7 @@ package com.algorithms.strings;
 import java.util.Scanner;
 
 /**
- * https://www.hackerrank.com/challenges/palindrome-index
+ * Link - https://www.hackerrank.com/challenges/palindrome-index
  * 
  * @author Kuldeep
  * 
