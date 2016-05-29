@@ -20,7 +20,7 @@ public class TheLoveLetterMystery {
 			int operations = 0;
 			for (int j = 0; j < len / 2; j++) {
 				int first = charArray[j];
-				int last = charArray[len-j-1];
+				int last = charArray[len - j - 1];
 
 				operations = operations + Math.abs(first - last);
 			}
