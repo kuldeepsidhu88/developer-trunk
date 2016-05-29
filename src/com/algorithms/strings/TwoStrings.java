@@ -15,13 +15,29 @@ public class TwoStrings {
 		for (int i = 0; i < t; i++) {
 			String one = in.next();
 			String two = in.next();
-			int length = one.length();
+			char[] oneArray = one.toCharArray();
+			char[] twoArray = two.toCharArray();
+
+			int[] oneAlphabets = new int[26];
+			int[] twoAlphabets = new int[26];
+
 			boolean substringFlag = false;
-			for (int j = 0; j < length; j++) {
-				String substring = String.valueOf(one.charAt(j));
-				if (two.contains(substring)) {
+			for (int j = 0; j < one.length(); j++) {
+				int index = one.charAt(j) - 97;
+				oneAlphabets[index]++;
+			}
+			for (int j = 0; j < two.length(); j++) {
+				int index = two.charAt(j) - 97;
+				twoAlphabets[index]++;
+			}
+
+			for (int j = 0; j < 26; j++) {
+				if (oneAlphabets[j] != 0 && twoAlphabets[j] != 0) {
 					substringFlag = true;
 					break;
+				} else {
+					substringFlag = false;
+
 				}
 			}
 
