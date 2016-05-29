@@ -15,9 +15,6 @@ public class TwoStrings {
 		for (int i = 0; i < t; i++) {
 			String one = in.next();
 			String two = in.next();
-			char[] oneArray = one.toCharArray();
-			char[] twoArray = two.toCharArray();
-
 			int[] oneAlphabets = new int[26];
 			int[] twoAlphabets = new int[26];
 
