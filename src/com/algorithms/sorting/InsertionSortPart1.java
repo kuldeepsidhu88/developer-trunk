@@ -11,18 +11,27 @@ import java.util.Scanner;
 public class InsertionSortPart1 {
 
 	public static void insertIntoSorted(int[] ar) {
-        // Fill up this function  
-		int num = ar[ar.length-1];
-		for (int i = ar.length-2; i >=0; i--) {
-			if(ar[i]>num){
-				ar[i+1] = ar[i];
+		// Fill up this function
+		int num = ar[ar.length - 1];
+		boolean sorted = false;
+		for (int i = ar.length - 2; i >= 0; i--) {
+			if (ar[i] > num) {
+				ar[i + 1] = ar[i];
 			} else {
-				ar[i+1]=num;
+				ar[i + 1] = num;
+				sorted = true;
 			}
 			printArray(ar);
+			if (sorted) {
+				break;
+			}
 		}
-		
-    }
+		if (ar[0] > num) {
+			ar[0] = num;
+			printArray(ar);
+		}
+
+	}
 
 	/* Tail starts here */
 	public static void main(String[] args) {
